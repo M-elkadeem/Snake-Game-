@@ -6,6 +6,7 @@ private:
 	bool iswin;
 	bool isgameover;
 	direction heading;
+	direction prevheading;
 public:
 	Game():iswin(true),isgameover(false),heading(None){}
 	void checkInput();

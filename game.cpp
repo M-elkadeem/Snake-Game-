@@ -34,47 +34,71 @@ void Game::checkInput()
 		heading = None;
 		return;
 		}
+		char previous_ch;
+		previous_ch = ch; 
 		switch (ch) {
 		case 'a':
 		case 'A':
-			heading = Left;
-			//return Left;
-			break;
+			if (heading != Right) {
+				heading = Left;
+				break;
+			}
+			else {
+				heading = Right; break;
+			}
 		case 'd':
 		case 'D':
-		   // return Right;	
-			heading = Right;
-			break;
+			if (heading != Left) {
+				heading = Right;
+				break;
+			}
+			else {
+				heading = Left;
+				break;
+			}
 		case 'w':
 		case 'W':
-			//return Up;
-			heading = Up;
-			break;
+			if (heading != Down) {
+				heading = Up; 
+				break;
+			}
+			else {
+				heading = Down;
+				break;
+			}
 		case 's':
 		case 'S':
-			//return Down;
-			heading = Down;
-			break;
+			if (heading != Up) {
+				heading = Down; 
+				break;
+			}
+			else {
+				heading = Up;
+			break; // in all the cases , we have to add this break otherwise , it will go for  the next command like here if u didnot write it , it will go for the stop command 
+			}
 		case 32:
-		//return Stop;
+			prevheading = heading;
 			heading = Stop;
 			break;
 		default:
-			//return None;
 			heading = None;		
 		}
 	}
-//	return None;
-	//heading = None;
+
 }
 
 void Game::processingInputs()
 {
 	switch (heading) {
 	case Stop:
+	//	system("cls");
 		cout << "the game is paused , press any key to continue" << endl;
-		(void)_getch();
-		heading = None;// this will handle all the other keys , except the main ones , so it will just continue as it was moving before 
+		int key;
+		do {
+			// this do while loop is just to keep the game stopped till u press another key and u will not go out form that loop till u press the space only 
+			key = _getch(); // this is one is here , to make the game stopped cuz it will need u to press any key and the for while loop is forcing to press the space key only 
+		} while (key != 32);
+		heading = prevheading;// this will handle all the other keys , except the main ones , so it will just continue as it was moving before 
 		break;
 	case Exit:
 		setgamestate(true);
@@ -126,14 +150,17 @@ void Game::playingthegame()
 		obj.drawingboard(snake1,person);
 		if (person.getplayersatate()) {
 			checkInput();
+			// the following two functions , are there to handle all the cases of the heading variable , wethear it's a direction or stop or none 
 			snake1.moving(heading,obj,person);
 			processingInputs();
 			Sleep(gameSpeed);// the speed here is fixed , and u have to connect its formula with the value of the height and the width
 		}
 		else {
-			cout << "Game over" << endl;
+			system("cls");
+		cout << "Game over" << endl;
 			break;
 		}
 	}
+	
 	cout << "Game Exited" << endl;
 }

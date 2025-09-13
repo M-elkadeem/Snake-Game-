@@ -41,7 +41,9 @@ void snake::moving(direction heading,board &obj,player &person) {
 		person.setplayerstate(false);
 	}
 	 // in the next for loop,we are checking the snake collision,in case the snake bite himself or something 
-	for (int i = 0; i < ntail; i++) {
+	for (int i = 1; i < ntail; i++) {// here we have to start the i from 1	cuz Collision detection triggers false game over after pause/resume 
+		//because head and first tail segment temporarily share the same position during pause state so it will cause the game to be over when u resume the game again 
+		// so as long as the fist segement is always safe , so we can ingore it from the loop and that is all 
 		if (H_snakeX == tailX[i]&&H_snakeY == tailY[i]) {
 			person.setplayerstate(false);
 			return;
