@@ -37,7 +37,7 @@ void snake::moving(direction heading,board &obj,player &person,snake &snake1) {
 		break;
 	}
 	/// in the following if statment , we are just checking the wall collision in case the snake has touched any wall , it will be game over 
-	if (H_snakeX <= 0 || H_snakeY <= 0 || H_snakeX >= (obj.getwidth()-1) || H_snakeY >= (obj.getheight()-1)) {
+	if (H_snakeX <= 0 || H_snakeY <= 0 || H_snakeX >= (obj.getwidth()-1) || H_snakeY >= (obj.getheight()-1)) { // i added , the -1 , just to prevent the snake from walking on the walls themselves 
 		person.setplayerstate(false);
 	}
 	 // in the next for loop,we are checking the snake collision,in case the snake bite himself or something 
@@ -60,8 +60,8 @@ void snake::moving(direction heading,board &obj,player &person,snake &snake1) {
 
 void snake::shifting_tail()
 {
-	if (ntail == 0) return; // we are just checking if ntail is 0 so there is no shifting needed 
-// here in the following , 
+	if (ntail == 0) return; // here we are just checking if ntail is 0 so there is no shifting needed 
+// the following , is the core of the shifting  where all the segments of the tail will keep shifting , with each other , to make them followed after each other 
 	for (int i = ntail-1 ; i >0; i--) {
 		tailX[i] = tailX[i - 1];
 		tailY[i] = tailY[i - 1];
