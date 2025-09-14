@@ -42,4 +42,24 @@ stuff is to seperates ur files  and keep in u rmind that u cannot implement some
 and if u wanna do so , u should at least write the name of the class before it like the following ( class "name" ) 
 
 
+
+ it's recommand to use the following function instead of using system(cls) and here is it 
+     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD coord = {0, 0};
+    DWORD count;
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+
+    GetConsoleScreenBufferInfo(hStdOut, &csbi);
+    DWORD cellCount = csbi.dwSize.X * csbi.dwSize.Y;
+    FillConsoleOutputCharacter(hStdOut, ' ', cellCount, coord, &count);
+    SetConsoleCursorPosition(hStdOut, coord);
+*/
+
+
+/*the upcoming features  like 
+ integerating a userinterface , and a gui interface ( new version ) 
+ the possiblily for playing mulitiple times in case of losing 
+ file handling , to save the scorec of each user , 
+ the excetption handling as well is a must 
+ and the last thing , in case there are not new feautres fro adding , ( the documentation )
 */

@@ -1,2 +1,18 @@
 ﻿  board.cpp
+  game.cpp
+C:\C++   language\projects in c++\snake game\game.cpp(19,12): warning C4566: character represented by universal-character-name '\u250C' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(19,12): warning C4566: character represented by universal-character-name '\u2500' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(19,12): warning C4566: character represented by universal-character-name '\u2510' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(20,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(21,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(22,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(23,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(24,12): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(24,12): warning C4566: character represented by universal-character-name '\u2500' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(24,12): warning C4566: character represented by universal-character-name '\u2518' cannot be represented in the current code page (1250)
+  snake game.cpp
+C:\C++   language\projects in c++\snake game\snake game.cpp(9,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  snako.cpp
+  utilities.cpp
+  Generating Code...
   snake game.vcxproj -> C:\C++   language\projects in c++\snake game\x64\Debug\snake game.exe

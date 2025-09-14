@@ -132,6 +132,7 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="snake game.cpp" />
     <ClCompile Include="snako.cpp" />
+    <ClCompile Include="utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="snako.h" />
+    <ClInclude Include="utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

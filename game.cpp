@@ -6,6 +6,7 @@
 #include "snako.h"
 #include "board.h"
 #include "player.h"
+#include "utilities.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ void Game::checkInput()
 	if (_kbhit()) {
 		int ch = _getch();
 		if (ch == 27) {
-			system("cls");
+			clearscreen();
 			cout << "┌─────────────────────────────────────┐" << endl;
 			cout << "│        ARE YOU SURE TO EXIT?        │" << endl;
 			cout << "│                                     │" << endl;
@@ -23,14 +24,12 @@ void Game::checkInput()
 			cout << "└─────────────────────────────────────┘" << endl;
 			int confirm = _getch();
 			if (confirm =='y'||confirm=='Y') {
-				system("cls");
+				clearscreen();
 				cout << "Good bye" << endl;
-				//return Exit;
 				heading = Exit;
 				return;
 			}
-		system("cls"); 
-			//return None;
+			clearscreen();
 		heading = None;
 		return;
 		}
@@ -74,7 +73,7 @@ void Game::checkInput()
 			}
 			else {
 				heading = Up;
-			break; // in all the cases , we have to add this break otherwise , it will go for  the next command like here if u didnot write it , it will go for the stop command 
+			break; // in all the cases , i  have to add this break . otherwise it will go for  the next command like here if u didnot write it , it will go for the stop command 
 			}
 		case 32:
 			prevheading = heading;
@@ -91,7 +90,6 @@ void Game::processingInputs()
 {
 	switch (heading) {
 	case Stop:
-	//	system("cls");
 		cout << "the game is paused , press any key to continue" << endl;
 		int key;
 		do {
@@ -142,9 +140,10 @@ void Game::playingthegame()
 	board obj(width, height);
 	snake snake1(width, height);
 	player person;
-	int baseSpeed = 80;  // Base speed in milliseconds
-	int speedAdjustment = (width + height) / 6;  // Larger boards get slightly slower
-	int gameSpeed = max(30, min(150, baseSpeed + speedAdjustment));
+	//int baseSpeed = 120;  // Base speed in milliseconds
+	//int speedAdjustment = (width + height) / 12;  // Larger boards get slightly slower
+	//int gameSpeed = max(100, min(160, baseSpeed + speedAdjustment));
+	int gameSpeed = 120;
 	obj.creatingfruit(snake1);
 	while (!getgamestate()) {
 		obj.drawingboard(snake1,person);
@@ -153,10 +152,10 @@ void Game::playingthegame()
 			// the following two functions , are there to handle all the cases of the heading variable , wethear it's a direction or stop or none 
 			snake1.moving(heading,obj,person,snake1);
 			processingInputs();
-			Sleep(200);// the speed here is fixed , and u have to connect its formula with the value of the height and the width
+			Sleep(gameSpeed);// the speed here is fixed , and u have to connect its formula with the value of the height and the width
 		}
 		else {
-			system("cls");
+			clearscreen();
 		cout << "Game over" << endl;
 			break;
 		}

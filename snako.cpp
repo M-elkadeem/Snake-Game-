@@ -110,9 +110,9 @@ void snake::growing_tail()
 	newtailX[old_ntail] = tailX[old_ntail-1];
 	newtailY[old_ntail] = tailY[old_ntail - 1];
 	
-	delete[]tailX;// here we have to deallocate the last tail 
+	delete[]tailX;// here i have to deallocate the last tail 
 	delete[]tailY;
-	//  and in the following , we are gonna make the orginal tail pointing to the newtail , to be able to use the original tail segments  
+	//  and in the following , im gonna make the orginal tail pointing to the newtail , to be able to use the original tail segments  
 	tailX = newtailX;
 	tailY = newtailY;
 }
@@ -120,7 +120,7 @@ void snake::growing_tail()
 void snake::drawingtail()
 {
 	for (int i = 0;i < ntail;i++) {
-// and here we are gonna use gotoXY function , cuz it can move the cursor to the exact coordinates 
+// and here im  gonna use gotoXY function , cuz it can move the cursor to the exact coordinates 
 	gotoXY(tailX[i], tailY[i]);
 	cout << "o";
 	}

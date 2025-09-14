@@ -1,6 +1,7 @@
 #include <iostream>
 #include "board.h"
 #include "snako.h"
+#include "utilities.h"
 
 using namespace std;
 int board::getwidth()
@@ -13,9 +14,9 @@ int board::getheight()
 	return height;
 }
 
-void board::drawingboard(snake& snk, player& person) // here is the drwaing of the game board and the initializaion of the snake 
+void board::drawingboard(snake& snk, player& person) // here is the drawing of the game board and the initializaion of the snake 
 {
-	system("cls");
+	clearscreen();
 	for (int i = 0;i < height;i++) {
 		for (int j = 0;j < width;j++) {
 			if (i == 0 || i == height - 1) {
@@ -38,7 +39,7 @@ void board::drawingboard(snake& snk, player& person) // here is the drwaing of t
 		cout << endl;
 	}
 	cout << "player score : " << "(" << person.getscore() << ")" << endl;
-	snk.drawingtail();// here we are gonna call the drawing tail function after drawing the board 
+	snk.drawingtail();// here im gonna call the drawing tail function after drawing the board 
 
 }
 void board::creatingfruit(snake &snake1)// here i will create the fruit and place in a random position 

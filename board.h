@@ -27,7 +27,7 @@ public:
 	int getfruitX();
 	int getfruitY();
 	~board() {
-		// u have to delete each grid ur creating 
+//deallocating the memory 		
 		for (int i = 0; i < height; i++) {
 			delete[] grid[i];
 		}
