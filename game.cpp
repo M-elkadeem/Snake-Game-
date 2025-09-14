@@ -145,15 +145,15 @@ void Game::playingthegame()
 	int baseSpeed = 80;  // Base speed in milliseconds
 	int speedAdjustment = (width + height) / 6;  // Larger boards get slightly slower
 	int gameSpeed = max(30, min(150, baseSpeed + speedAdjustment));
-	obj.creatingfruit();
+	obj.creatingfruit(snake1);
 	while (!getgamestate()) {
 		obj.drawingboard(snake1,person);
 		if (person.getplayersatate()) {
 			checkInput();
 			// the following two functions , are there to handle all the cases of the heading variable , wethear it's a direction or stop or none 
-			snake1.moving(heading,obj,person);
+			snake1.moving(heading,obj,person,snake1);
 			processingInputs();
-			Sleep(gameSpeed);// the speed here is fixed , and u have to connect its formula with the value of the height and the width
+			Sleep(200);// the speed here is fixed , and u have to connect its formula with the value of the height and the width
 		}
 		else {
 			system("cls");

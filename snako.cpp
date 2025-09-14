@@ -18,7 +18,7 @@ int snake::getH_snakeY()
 {
 	return H_snakeY;
 }
-void snake::moving(direction heading,board &obj,player &person) {
+void snake::moving(direction heading,board &obj,player &person,snake &snake1) {
 	//  here i will add the shifting function
   // we have to call the shifting function for every single move adn here is it 
 	shifting_tail();
@@ -37,7 +37,7 @@ void snake::moving(direction heading,board &obj,player &person) {
 		break;
 	}
 	/// in the following if statment , we are just checking the wall collision in case the snake has touched any wall , it will be game over 
-	if (H_snakeX <= 0 || H_snakeY <= 0 || H_snakeX >= obj.getwidth() || H_snakeY >= obj.getheight()) {
+	if (H_snakeX <= 0 || H_snakeY <= 0 || H_snakeX >= (obj.getwidth()-1) || H_snakeY >= (obj.getheight()-1)) {
 		person.setplayerstate(false);
 	}
 	 // in the next for loop,we are checking the snake collision,in case the snake bite himself or something 
@@ -52,7 +52,7 @@ void snake::moving(direction heading,board &obj,player &person) {
 	if (H_snakeX == obj.getfruitX() && H_snakeY == obj.getfruitY()) {
 		growing_tail();  /// once it eats any fruit , it will get the tail to increase " 
 	
-		obj.creatingfruit();
+		obj.creatingfruit(snake1);
 		person.updatescore();// in the update function , it will increase the score by one 
 	}
 

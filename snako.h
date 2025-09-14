@@ -22,7 +22,7 @@ public:
 	}
 	int getH_snakeX();
 	int getH_snakeY();
-	void moving(direction heading,board &obj,player &person);
+	void moving(direction heading,board &obj,player &person ,snake&snake1);
 	void shifting_tail();
 	int *gettailX();
 	int *gettailY();

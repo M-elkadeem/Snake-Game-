@@ -23,7 +23,7 @@ public:
 	int getwidth();
 	int getheight();
 	void drawingboard(snake &snk,player &person);
-	void creatingfruit();
+	void creatingfruit(snake &snake1);
 	int getfruitX();
 	int getfruitY();
 	~board() {
