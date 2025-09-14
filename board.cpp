@@ -43,10 +43,29 @@ void board::drawingboard(snake& snk, player& person) // here is the drwaing of t
 }
 void board::creatingfruit(snake &snake1)// here i will create the fruit and place in a random position 
 {
+	bool  isintersected = false;
 	// here the coordinates will be generalting in this way to avoid mixing betweent the fruit and the boders of the board
-	fruitX = rand() % (width - 2) + 1;
-
-	fruitY = rand() % (height - 2) + 1;
+	
+//the next while loop is to prevent the fruit from being created over one of the segements of the snake itself , whether over the head or the tail itself  
+	while (1) {
+// so here if there will be any intersection,the isintersected will be set to true , and the code will go through loop till there is no any intersection between them 
+		isintersected = false; 
+		fruitX = rand() % (width - 2) + 1;
+		fruitY = rand() % (height - 2) + 1;
+		if (fruitX == snake1.getH_snakeX() && fruitY == snake1.getH_snakeY()) {
+			isintersected = true;
+			continue;
+		}
+			for (int i = 0; i < snake1.getNtail(); i++) {
+				if (fruitX == snake1.gettailX()[i] && fruitY == snake1.gettailY()[i]) {
+					isintersected = true;
+					break;// it force us to exit,from the for loop itself not the while loop ( the closest loop 
+				}
+		}
+		if (isintersected == false) {
+			break;
+		}
+	}
 
 }
 
