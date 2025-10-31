@@ -79,8 +79,8 @@ void Game::checkInput()
 			prevheading = heading;
 			heading = Stop;
 			break;
-		default:
-			heading = None;		
+		//default:
+			//heading = None;		
 		}
 	}
 
@@ -90,6 +90,7 @@ void Game::processingInputs()
 {
 	switch (heading) {
 	case Stop:
+
 		cout << "the game is paused , press any key to continue" << endl;
 		int key;
 		do {
@@ -140,11 +141,8 @@ void Game::playingthegame()
 	board obj(width, height);
 	snake snake1(width, height);
 	player person;
-	//int baseSpeed = 120;  // Base speed in milliseconds
-	//int speedAdjustment = (width + height) / 12;  // Larger boards get slightly slower
-	//int gameSpeed = max(100, min(160, baseSpeed + speedAdjustment));
 	int gameSpeed = 120;
-	obj.creatingfruit(snake1);
+	obj.creatingfruit(snake1); 
 	while (!getgamestate()) {
 		obj.drawingboard(snake1,person);
 		if (person.getplayersatate()) {
@@ -157,9 +155,15 @@ void Game::playingthegame()
 		else {
 			clearscreen();
 		cout << "Game over" << endl;
+		setgamestate(true);//////////////////////////////////////////////////////////////hereeeeee
 			break;
 		}
 	}
 	
 	cout << "Game Exited" << endl;
+}
+
+void Game::setpreviousheading(direction heading)
+{
+	this->heading = prevheading; 
 }
