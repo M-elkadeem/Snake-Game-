@@ -7,6 +7,7 @@ private:
 	bool isgameover;
 	direction heading;
 	direction prevheading;
+	
 public:
 	Game():iswin(true),isgameover(false),heading(None){}
 	void checkInput();
@@ -16,6 +17,6 @@ public:
 	bool getgamestate();
 	void setgamestate(bool state);
 	void playingthegame();
-
+	void  setpreviousheading(direction heading);
 };
 

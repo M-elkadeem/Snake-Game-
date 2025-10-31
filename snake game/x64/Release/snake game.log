@@ -1,0 +1,17 @@
+﻿  game.cpp
+C:\C++   language\projects in c++\snake game\game.cpp(19,12): warning C4566: character represented by universal-character-name '\u250C' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(19,12): warning C4566: character represented by universal-character-name '\u2500' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(19,12): warning C4566: character represented by universal-character-name '\u2510' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(20,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(21,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(22,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(23,12): warning C4566: character represented by universal-character-name '\u2502' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(24,12): warning C4566: character represented by universal-character-name '\u2514' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(24,12): warning C4566: character represented by universal-character-name '\u2500' cannot be represented in the current code page (1250)
+C:\C++   language\projects in c++\snake game\game.cpp(24,12): warning C4566: character represented by universal-character-name '\u2518' cannot be represented in the current code page (1250)
+  Generating code
+  2 of 47 functions ( 4.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  snake game.vcxproj -> C:\C++   language\projects in c++\snake game\x64\Release\snake game.exe

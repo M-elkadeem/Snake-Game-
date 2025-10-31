@@ -13,6 +13,5 @@ C:\C++   language\projects in c++\snake game\game.cpp(24,12): warning C4566: cha
   snake game.cpp
 C:\C++   language\projects in c++\snake game\snake game.cpp(9,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   snako.cpp
-  utilities.cpp
   Generating Code...
   snake game.vcxproj -> C:\C++   language\projects in c++\snake game\x64\Debug\snake game.exe
