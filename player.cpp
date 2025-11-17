@@ -5,6 +5,10 @@ void player::updatescore()
 	score++;
 }
 
+
+
+
+
 int player::getscore()
 {
 	return score;

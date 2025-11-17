@@ -19,7 +19,7 @@ void Game::checkInput()
 			cout << "┌─────────────────────────────────────┐" << endl;
 			cout << "│        ARE YOU SURE TO EXIT?        │" << endl;
 			cout << "│                                     │" << endl;
-			cout << "│      Press Y to confirm exit        │" << endl;
+			cout << "│      Press Yes to confirm exit othe wise        │" << endl;
 			cout << "│      Any other key to continue      │" << endl;
 			cout << "└─────────────────────────────────────┘" << endl;
 			int confirm = _getch();
